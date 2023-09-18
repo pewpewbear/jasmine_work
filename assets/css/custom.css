@@ -1,0 +1,263 @@
+/* 預設的圖片樣式 */
+.brand-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: center; /* 預設為居中 */
+}
+
+/* 媒體查詢：當螢幕寬度小於或等於 768px（大多數的手機）時的樣式 */
+@media only screen and (max-width: 768px) {
+  .brand-images {
+    flex-direction: column; /* 讓圖片垂直排列 */
+    align-items: center; /* 置中圖片 */
+  }
+
+  .brand-image {
+    margin-right: 0 !important; /* 移除右邊的間距 */
+    margin-left: 0 !important; /* 移除左邊的間距 */
+  }
+}
+
+/* 預設的圖片尺寸，例如：桌面尺寸 */
+.brand-image:nth-child(1) {
+  max-width: 20vw;
+}
+.brand-image:nth-child(2) {
+  max-width: 23vw;
+}
+.brand-image:nth-child(3) {
+  max-width: 20vw;
+}
+.brand-image:nth-child(4) {
+  max-width: 20vw;
+  height: 6vw;
+  margin-top: 2vw;
+}
+.brand-image:nth-child(5) {
+  width: 12vw;
+}
+
+/* 針對平板尺寸 */
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+  .brand-image:nth-child(1) {
+    max-width: 250px;
+  }
+  .brand-image:nth-child(2) {
+    max-width: 250px;
+  }
+  .brand-image:nth-child(3) {
+    max-width: 320px;
+  }
+  .brand-image:nth-child(4) {
+    max-width: 180px;
+  }
+  .brand-image:nth-child(5) {
+    width: 12vw;
+  }
+}
+
+/* 針對手機尺寸 */
+@media only screen and (max-width: 768px) {
+  .brand-image:nth-child(1) {
+    max-width: 60vw;
+  }
+  .brand-image:nth-child(2) {
+    max-width: 60vw;
+  }
+  .brand-image:nth-child(3) {
+    max-width: 60vw;
+  }
+  .brand-image:nth-child(4) {
+    max-width: 50vw;
+    height: 14vw;
+  }
+  .brand-image:nth-child(5) {
+    width: 35vw;
+  }
+}
+
+
+
+
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: #000000;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.container-timeline {
+  padding: 15px 30px;
+  position: relative;
+  background: inherit;
+  width: 50%;
+}
+
+.container-timeline.left {
+  left: 0;
+}
+
+.container-timeline.right {
+  left: 50%;
+}
+
+.container-timeline::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: calc(50% - 8px);
+  right: -8px;
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.container-timeline.right::after {
+  left: -8px;
+}
+
+.container-timeline::before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  top: calc(50% - 1px);
+  right: 8px;
+  background: #000000;
+  z-index: 1;
+}
+
+.container-timeline.right::before {
+  left: 8px;
+}
+
+.container-timeline .date {
+  position: absolute;
+  display: inline-block;
+  top: calc(50% - 8px);
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: ##555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+
+.container-timeline.left .date {
+  right: -75px;
+}
+
+.container-timeline.right .date {
+  left: -75px;
+}
+
+.container-timeline .icon {
+  position: absolute;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  padding: 9px 0;
+  top: calc(50% - 20px);
+  background: #F6D155;
+  border: 2px solid #000000;
+  border-radius: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: #000000;
+  z-index: 1;
+}
+
+.container-timeline.left .icon {
+  right: 56px;
+}
+
+.container-timeline.right .icon {
+  left: 56px;
+}
+
+.container-timeline .content {
+  padding: 30px 90px 30px 30px;
+  background: #F6D155;
+  position: relative;
+  border-radius: 0 500px 500px 0;
+}
+
+.container-timeline.right .content {
+  padding: 30px 30px 30px 90px;
+  border-radius: 500px 0 0 500px;
+}
+
+.container-timeline .content h2 {
+  margin: 0 0 0 0;
+  font-size: 18px;
+  font-weight: normal;
+  color: #555;
+}
+
+.container-timeline .content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+@media (max-width: 767.98px) {
+  .timeline::after {
+    left: 90px;
+  }
+
+  .container-timeline {
+    width: 100%;
+    padding-left: 120px;
+    padding-right: 30px;
+  }
+
+  .container-timeline.right {
+    left: 0%;
+  }
+
+  .container-timeline.left::after, 
+  .container-timeline.right::after {
+    left: 82px;
+  }
+
+  .container-timeline.left::before,
+  .container-timeline.right::before {
+    left: 100px;
+    border-color: transparent #000000 transparent transparent;
+  }
+
+  .container-timeline.left .date,
+  .container-timeline.right .date {
+    right: auto;
+    left: 15px;
+  }
+
+  .container-timeline.left .icon,
+  .container-timeline.right .icon {
+    right: auto;
+    left: 146px;
+  }
+
+  .container-timeline.left .content,
+  .container-timeline.right .content {
+    padding: 30px 30px 30px 90px;
+    border-radius: 500px 0 0 500px;
+  }
+}
